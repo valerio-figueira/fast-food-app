@@ -1,10 +1,11 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body{
     font-family: 'Courier New', Courier, monospace;
     color: #2e2e2e;
     background-color: grey;
-    max-width: 480px;
+    max-width: 400px;
     min-width: 360px;
     margin: 0 auto;
 }
@@ -13,7 +14,7 @@ body{
     display: grid;
     grid-template-columns: 50px 1fr;
     grid-template-areas: 
-    "navbar container"
+    "navbar header"
     "navbar container"
     "navbar container";
 }
@@ -21,6 +22,18 @@ body{
 .container{
     grid-area: container;
     background-color: white;
+}
+
+header{
+    grid-area: header;
+
+    font-family: 'Fredoka One', cursive;
+    font-size: 14px;
+    color: brown;
+    background-color: white;
+}
+header .main-title{
+    text-align: center;
 }
 
 .navbar{
@@ -31,7 +44,7 @@ body{
     gap: 30px;
 
     background-color: brown;
-    padding: 50px 0 50vh;
+    padding: 50px 0px 50vh;
 }
 .navbar a{
     font-size: 26px;
@@ -40,10 +53,10 @@ body{
 }
 
 .container{
-    padding: 50px 20px;
+    padding: 20px 20px 50px;
 }
 .selected-food{
-    padding: 30px 50px;
+    padding: 30px 20px;
     background-color: #e7e7e7;
     border-radius: 10px 10px 0 0;
 }
@@ -74,8 +87,8 @@ body{
     color: brown;
 }
 .selected-food .description{
-    text-align: justify;
-    font-size: 14px;
+    text-align: left;
+    font-size: 15px;
     margin: 0;
 }
 
@@ -87,6 +100,9 @@ body{
     font-weight: bolder;
     text-align: center;
     margin: 25px auto 0;
+}
+.selected-food .price::before{
+    content: "R$ ";
 }
 .quantity_controller{
     display: flex; 
@@ -110,7 +126,7 @@ body{
     width: 26px;
     color: white;
     background-color: brown;
-    padding: 0;    
+    padding: 0;
     border-radius: 50%;
 }
 
@@ -119,10 +135,14 @@ body{
 /*GALLERY*/
 .food-gallery{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
 
-    padding: 0 0 30px;
+    padding: 0 10px 30px;
+
+    animation-name: fadeIn;
+    animation-delay: 0;
+    animation-duration: 2s;
 }
 .food-gallery img{
     cursor: pointer;
@@ -133,4 +153,26 @@ body{
 }
 .food-gallery img:hover{
     transform: translateY(-3px);
+}
+
+
+
+.selected-food{
+    animation: fadeIn 2s;
+}
+.selected-food img{
+    animation-name: fadeIn;
+    animation-delay: 0;
+    animation-duration: 2s;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
