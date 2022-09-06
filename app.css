@@ -51,6 +51,18 @@ header .main-title{
     color: white;
     text-decoration: none;
 }
+.navbar .burguer.active{
+    color: #eecb55;
+}
+.navbar .pizza.active{
+    color: #eecb55;
+}
+.navbar .drink.active{
+    color: #a2e5cf;
+}
+.navbar .purchase_cart.active{
+    color: #eecb55;
+}
 
 .container{
     padding: 20px 20px 50px;
@@ -82,9 +94,10 @@ header .main-title{
 
 
 /*TITLE AND DESCRIPTION OF ITEMs*/
-.selected-food .item-name{
+.selected-food .food-name{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: brown;
+    font-size: 20px;
 }
 .selected-food .description{
     text-align: left;
@@ -100,6 +113,7 @@ header .main-title{
     font-weight: bolder;
     text-align: center;
     margin: 25px auto 0;
+    color: #3b9b3b;
 }
 .selected-food .price::before{
     content: "R$ ";
@@ -139,16 +153,16 @@ header .main-title{
     gap: 10px;
 
     padding: 0 10px 30px;
-
-    animation-name: fadeIn;
-    animation-delay: 0;
-    animation-duration: 2s;
 }
 .food-gallery img{
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px #000000a8;
     border-radius: 7px;
     width: 100%;
+
+    animation-name: fadeIn;
+    animation-delay: 0s;
+    animation-duration: 2s;
     transition: transform 0.5s;
 }
 .food-gallery img:hover{
@@ -156,14 +170,11 @@ header .main-title{
 }
 
 
-
 .selected-food{
-    animation: fadeIn 2s;
+    animation: none;
 }
-.selected-food img{
-    animation-name: fadeIn;
-    animation-delay: 0;
-    animation-duration: 2s;
+.selected-food.opened{
+    animation: fadeIn 2s 0s;
 }
 
 

@@ -28,7 +28,7 @@ export default class Burguers{
             {
                 id: "3",
                 name: "INFANTIL MISTO",
-                description: "Pão tradicionao, 1 hambúrguer tradicional, presunto, mussarela e requeijão.",
+                description: "Pão tradicional, 1 hambúrguer tradicional, presunto, mussarela e requeijão.",
                 img: "imgs/pexels-foodie-factor-551991.jpg",
                 price: 7.00
             },
